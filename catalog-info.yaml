@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: evan-ai-foo-photo-generator-app-dev
+  annotations:
+    argocd/app-name: evan-ai-foo-photo-generator-app-dev
+    backstage.io/kubernetes-id: evan-ai-foo-photo-generator-app
+    backstage.io/kubernetes-namespace: evan-ai-foo
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: WindTurbineInc/evan-ai-foo-photo-generator
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/dev-pipelines/ns/evan-ai-foo/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/k8s/ns/evan-ai-foo/deployments/evan-ai-foo-photo-generator-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.wearedevs.rl97.p1.openshiftapps.com/#https://github.com/WindTurbineInc/evan-ai-foo-photo-generator?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/evanshortiss"
